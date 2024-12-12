@@ -1,0 +1,54 @@
+
+def longest_word(s): 
+    """Find the word with the longest length.""" 
+    words = s.split() 
+    if not words: 
+        return None 
+    return max(words, key=len) 
+ 
+def character_frequency(s, char): 
+    """Determine the frequency of occurrence of a particular character in the string.""" 
+    return s.count(char) 
+ 
+def is_palindrome(s): 
+    """Check if the given string is a palindrome.""" 
+    s_cleaned = s.replace(" ", "").lower()  # Remove spaces and make lowercase 
+    return s_cleaned == s_cleaned[::-1] 
+ 
+def index_of_substring(s, substring): 
+    """Display index of the first occurrence of the substring.""" 
+    return s.find(substring) 
+ 
+def count_word_occurrences(s): 
+    """Count the occurrences of each word in the string.""" 
+    words = s.split() 
+    word_count = {} 
+    for word in words: 
+        word = word.lower()  # Convert to lowercase for consistent counting 
+        if word in word_count: 
+            word_count[word] += 1 
+        else: 
+            word_count[word] = 1 
+    return word_count 
+ 
+# Example usage 
+if __name__ == "__main__": 
+    sample_string = "Madam Arora teaches Malayalam at the university at college" 
+    sample_string1 = "Madam" 
+ 
+    print("Sample String:", sample_string) 
+ 
+    # a) Display word with the longest length 
+    print("Longest word:", longest_word(sample_string)) 
+ 
+    # b) Determine the frequency of occurrence of a particular character (e.g., 'u') 
+    char = 'u' 
+    print(f"Frequency of character '{char}':", character_frequency(sample_string, char)) 
+ 
+    # c) Check if the given string is a palindrome 
+print("Is palindrome:", is_palindrome(sample_string1)) 
+# d) Display index of the first occurrence of a substring (e.g., 'at') 
+substring = 'at' 
+print(f"Index of substring '{substring}':", index_of_substring(sample_string, substring)) 
+# e) Count the occurrences of each word in the string 
+print("Word occurrences:", count_word_occurrences(sample_string))
